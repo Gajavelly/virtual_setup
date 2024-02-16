@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+class base
+{
+    public:
+     base(){
+        cout <<" base constructor" <<endl;
+    }
+    
+    virtual ~base(){
+        cout <<" base destructor" <<endl;
+        
+    }
+    
+    virtual void fun()
+    {
+        cout <<" base fun" <<endl;
+    }
+};
+
+class derived : public base
+{
+    public: 
+    derived(){
+        cout <<" derived constructor" <<endl;
+    }
+    
+    ~derived(){
+        cout <<" derived destructor" <<endl;
+        
+    }
+    void fun()
+    {
+        cout <<" derived fun" <<endl;
+        
+    }
+};
+int main()
+{
+    base *ptr =new derived();
+    ptr -> fun();
+    delete ptr;
+    // base *ptr;
+    // derived d;
+    // ptr = &d;
+    // ptr->fun();
+
+    //return 0;
+}
